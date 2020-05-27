@@ -1,0 +1,55 @@
+#landing-page{
+    margin-bottom: 48px;
+}
+
+#splash-div{
+    background-image: url("/assets/images/black-and-white-photo-of-man-with-umbrella-3299386.jpg");
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 16px;
+}
+
+#landing-page-content{
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    >div{
+        text-align: justify;
+        font-size: .85em;
+        color: rgba(233, 231, 231, .85);
+        font-weight: 100;
+        line-height: 1.75;
+        margin-bottom: 16px;
+    }
+}
+
+#btn-array{
+    display: flex;
+    justify-content: center;
+    > div{
+        margin-top: 8px;
+       button{
+        border-radius: 5px;
+        width: 100px;
+        padding: 10px 22px;
+        background-color: #1D1D1D;
+        color: $light-text-color;
+        outline: none;
+        border: none;
+        font-weight: 800;
+        font-size: .7em;
+        font-family: 'Montserrat', sans-serif; //rgb(133, 131, 131)
+        box-shadow: -1px -1px 4px .5px #303030,5px 3px 3px .55px #161616
+       }
+    }
+}
+
+#about-btn{
+    margin-right: 8px;
+}
+
+#test-btn{
+    margin-left: 8px;
+}

@@ -1,0 +1,70 @@
+input[type="text"], input[type="email"]{
+    padding-left: 40px;
+    padding-bottom: 5px;    
+    width: 95%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: .85px solid rgba(255, 255, 255, .4);
+    color: $light-text-color;
+}
+
+#full-name{
+    background-size: 13px;
+    background-image: url("/assets/svg/user-regular.svg");
+    background-repeat: no-repeat;
+    background-position-x: 8px;
+    background-position-y: 5px;
+    
+}
+
+
+
+#email{
+    background-size: 13px;
+    background-image: url("/assets/svg/at-solid.svg");
+    background-repeat: no-repeat;
+    background-position-x: 8px;
+    background-position-y: 5px;
+}
+
+#message-p{
+    color: $bright-text-color;
+    font-size: .85em;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+#message{
+    resize: none;
+    width: 95%;
+    height: 25vh;
+    background-color: rgba(38,38,38,.31);
+    border: none;
+    outline: none;
+    font-size: .8em;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 8px;
+    color: $light-text-color;
+}
+
+
+.div-kindred{
+    margin-top: 32px;
+}
+
+#submit-div{
+    margin-top: 16px;
+    #send{
+        border-radius: 5px;
+        width: 150px;
+        padding: 15px 25px;
+        background-color: #1D1D1D;
+        color: $light-text-color;
+        outline: none;
+        border: none;
+        font-weight: 800;
+        font-family: 'Montserrat', sans-serif; //rgb(133, 131, 131)
+        box-shadow: -1px -1px 4px .5px #303030,5px 3px 3px .55px #161616
+    }
+}
