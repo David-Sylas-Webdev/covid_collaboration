@@ -31,25 +31,3 @@ body, html{
     color: $light-text-color;
 
 }
-.bar{
-    width: 15px;
-    height: 1px;
-    background-color: $bright-text-color;
-}
-
-.main-sections:not(#landing-page){
-    padding: 0 16px;
-    margin-bottom: 48px;
-}
-
-h2{
-    color: $bright-text-color;
-    text-decoration: underline;
-    margin-right: 8px;
-    font-size: .65em;
-}
-
-.heading-div{
-    display: flex;
-    align-items: center;
-}
