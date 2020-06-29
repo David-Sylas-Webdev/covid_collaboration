@@ -6,28 +6,37 @@ $break-medium-two: 800px;
 $break-large: 1000px;
 $break-larger: 1280px;
 $break-humongous: 1440px;
-$light-text-color: #8E8E8E;
+$light-text-color: #ddd;
 $bright-text-color: #EFEFEF;
+$secondary-color: #f10707;
 
-@import "headersection";
+@mixin hoverEffect {
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    transition-delay: 2ms;
+  }
+
 
 @import "landingpage";
-
 @import "about";
-
-@import "contact";
-
-@import "footer";
+@import "test";
 
 *{
     box-sizing: border-box;
-}
-body, html{
-    scroll-behavior: smooth;
     padding: 0;
     margin: 0;
-    background-color: #191919;
-    font-family: 'Montserrat', sans-serif;
-    color: $light-text-color;
-
+}
+ html{
+    scroll-behavior: smooth;
+    background-image: url(/assets/img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    body{
+        background-color: rgba($color: #000, $alpha: 0.75); 
+        font-family: 'Montserrat', sans-serif;  
+        color: $bright-text-color;
+        min-width: 100vw;
+        min-height: 100vh;
+    }  
 }

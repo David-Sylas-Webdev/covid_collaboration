@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Landing Page*/
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate3d(1px, 10px, 0px);
+            transform: translate3d(1px, 10px, 0px);
+  }
+  100% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+@keyframes float {
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate3d(1px, 10px, 0px);
+            transform: translate3d(1px, 10px, 0px);
+  }
+  100% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.landingPage {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'aside header header header' 'aside section section section';
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: minmax(50px, 70px) 1fr;
+      grid-template-rows: minmax(50px, 70px) 1fr;
+  overflow: hidden;
+}
+
+.landingPage header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.landingPage header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-right: 2em;
+}
+
+.landingPage header nav ul li {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: .3em;
+  border: .1px solid transparent;
+}
+
+.landingPage header nav ul li:hover {
+  background-color: #f10707;
+  border: .1px solid transparent;
+  border-radius: 6px;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 2ms;
+          transition-delay: 2ms;
+}
+
+.landingPage header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.landingPage aside {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: aside;
+  color: #ddd;
+  background-color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 15%;
+}
+
+.landingPage aside div {
+  margin-left: 15%;
+  margin-bottom: 15%;
+}
+
+.landingPage aside div .covid-svg {
+  max-width: 5em;
+  -webkit-animation: float 4s infinite;
+          animation: float 4s infinite;
+}
+
+.landingPage aside div span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 70%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.landingPage aside div span .flag-svg {
+  width: 1.5em;
+  margin: 5px 0px;
+}
+
+.landingPage aside div h1 {
+  font-size: 2.6em;
+  font-weight: 800;
+}
+
+.landingPage aside div h3 {
+  font-weight: 500;
+}
+
+.landingPage section {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: section;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.landingPage section div {
+  position: relative;
+  padding-top: 10%;
+  padding-left: 7%;
+}
+
+.landingPage section div h1 {
+  font-size: 5rem;
+}
+
+.landingPage section div h3 {
+  font-size: 1.2rem;
+}
+
+.landingPage section span {
+  position: relative;
+  padding-top: 10%;
+  padding-left: 7%;
+}
+
+.landingPage section span button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: inherit;
+  padding: 10px 35px;
+  margin: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 0.5px solid #fff;
+  cursor: pointer;
+}
+
+.landingPage section span .test {
+  padding: 15px 50px;
+  background-color: #f10707;
+  border: 0.5px solid #f10707;
+}
+
+.landingPage section span .test:hover {
+  background-color: transparent;
+  border: 0.5px solid #fff;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 2ms;
+          transition-delay: 2ms;
+}
+
+.landingPage section span .explore {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2em;
+          column-gap: 2em;
+}
+
+.about {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'bgName    bgName bgName  bgName' 'textArea textArea textArea navLinks';
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: minmax(0, 0.8fr) 2fr;
+      grid-template-rows: minmax(0, 0.8fr) 2fr;
+  background-color: #333333;
+}
+
+.about .bgName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: bgName;
+  font-size: 12em;
+  font-weight: 900;
+  padding: 2px 8%;
+  color: rgba(68, 68, 68, 0.3);
+}
+
+.about .fuseTxt {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: textArea;
+  line-height: 2em;
+  padding: 2px 8%;
+}
+
+.about .fuseTxt h3 {
+  font-size: 2em;
+}
+
+.about .fuseTxt p {
+  font-size: 1em;
+  text-align: justify;
+  margin: 2em 0;
+}
+
+.about .navLinks {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: navLinks;
+  background-color: brown;
+}
+
+.test {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'bgName    bgName bgName  bgName' 'textArea textArea textArea navLinks';
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: minmax(0, 0.8fr) 2fr;
+      grid-template-rows: minmax(0, 0.8fr) 2fr;
+  background-color: #333333;
+}
+
+.test .bgName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: bgName;
+  font-size: 12em;
+  font-weight: 900;
+  padding: 2px 8%;
+  color: rgba(68, 68, 68, 0.3);
+}
+
+.test .procedureTxt {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: textArea;
+  line-height: 2em;
+  padding: 2px 8%;
+}
+
+.test .procedureTxt h3 {
+  font-size: 2em;
+}
+
+.test .procedureTxt p {
+  font-size: 1em;
+  text-align: justify;
+  margin: 2em 0;
+}
+
+.test .navLinks {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: navLinks;
+  background-color: brown;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-image: url(/assets/img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html body {
+  background-color: rgba(0, 0, 0, 0.75);
+  font-family: 'Montserrat', sans-serif;
+  color: #EFEFEF;
+  min-width: 100vw;
+  min-height: 100vh;
+}

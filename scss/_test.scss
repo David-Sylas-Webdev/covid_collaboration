@@ -1,4 +1,4 @@
-.about{
+.test{
     display: grid;
     grid-template-areas: 
         'bgName    bgName bgName  bgName'
@@ -15,7 +15,7 @@
         color: rgba($color: #444, $alpha: 0.3);
     }
 
-    .fuseTxt{
+    .procedureTxt{
         grid-area: textArea;
         line-height: 2em;
         padding: 2px 8%;
