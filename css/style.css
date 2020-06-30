@@ -267,6 +267,7 @@
   background-color: brown;
 }
 
+/* Test */
 .test {
   display: -ms-grid;
   display: grid;
@@ -308,6 +309,34 @@
   margin: 2em 0;
 }
 
+.test .procedureTxt span button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: inherit;
+  padding: 15px 45px;
+  margin: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 0.5px solid #fff;
+  cursor: pointer;
+  background-color: #f10707;
+  border: 0.5px solid #f10707;
+}
+
+.test .procedureTxt span button:hover {
+  background-color: transparent;
+  border: 0.5px solid #fff;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 2ms;
+          transition-delay: 2ms;
+}
+
 .test .navLinks {
   -ms-grid-row: 2;
   -ms-grid-column: 4;
@@ -323,7 +352,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  height: 100%;
   background-image: url(/assets/img/bg.jpg);
   background-position: center;
   background-size: cover;
@@ -334,6 +363,5 @@ html body {
   background-color: rgba(0, 0, 0, 0.75);
   font-family: 'Montserrat', sans-serif;
   color: #EFEFEF;
-  min-width: 100vw;
-  min-height: 100vh;
+  height: 100%;
 }

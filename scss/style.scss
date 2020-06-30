@@ -27,7 +27,7 @@ $secondary-color: #f10707;
     margin: 0;
 }
  html{
-    scroll-behavior: smooth;
+    height: 100%;
     background-image: url(/assets/img/bg.jpg);
     background-position: center;
     background-size: cover;
@@ -36,7 +36,6 @@ $secondary-color: #f10707;
         background-color: rgba($color: #000, $alpha: 0.75); 
         font-family: 'Montserrat', sans-serif;  
         color: $bright-text-color;
-        min-width: 100vw;
-        min-height: 100vh;
+        height: 100%;
     }  
 }

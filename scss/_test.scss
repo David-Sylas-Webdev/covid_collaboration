@@ -1,3 +1,7 @@
+/* Test */
+
+$paddingLeft:8%;
+
 .test{
     display: grid;
     grid-template-areas: 
@@ -11,14 +15,14 @@
         grid-area: bgName;  
         font-size: 12em;
         font-weight: 900;
-        padding: 2px 8%;
+        padding: 2px $paddingLeft;
         color: rgba($color: #444, $alpha: 0.3);
     }
 
     .procedureTxt{
         grid-area: textArea;
         line-height: 2em;
-        padding: 2px 8%;
+        padding: 2px $paddingLeft;
         h3{
             font-size: 2em;
         }
@@ -26,6 +30,27 @@
             font-size: 1em;
             text-align: justify;
             margin: 2em 0;
+        }
+        span{
+            button{
+                display: inline-flex;
+                color: inherit;
+                padding: 15px 45px;
+                margin: 6px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 6px;
+                background-color: transparent;
+                border: 0.5px solid #fff;
+                cursor: pointer;
+                background-color: $secondary-color;
+                border: .5px solid $secondary-color;
+                &:hover{
+                    background-color: transparent;
+                    border: 0.5px solid #fff;
+                    @include hoverEffect;
+                }
+            }
         }
     }
 
