@@ -1,4 +1,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  background-image: url(../assets/img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+html body {
+  background-color: rgba(0, 0, 0, 0.75);
+  font-family: 'Montserrat', sans-serif;
+  color: #EFEFEF;
+  height: 100%;
+}
+
+html body .navLinks {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: navLinks;
+      grid-template-rows: repeat(4, minmax(40px, 100px));
+  display: inherit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html body .navLinks div {
+  width: 4em;
+  height: 5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+html body .navLinks div svg {
+  width: 1em;
+  height: 2em;
+  fill: #666;
+  margin: 1.5em;
+}
+
+html body .navLinks div svg:hover, html body .navLinks div svg:active, html body .navLinks div svg::-moz-selection {
+  fill: rgba(241, 7, 7, 0.9);
+  width: 1.5em;
+  margin-left: 1.3em;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 2ms;
+}
+
+html body .navLinks div svg:hover, html body .navLinks div svg:active, html body .navLinks div svg::selection {
+  fill: rgba(241, 7, 7, 0.9);
+  width: 1.5em;
+  margin-left: 1.3em;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 2ms;
+          transition-delay: 2ms;
+}
+
+html body .navLinks div .active {
+  fill: #f10707;
+}
+
+html body .bgName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: bgName;
+  font-size: 12em;
+  font-weight: 900;
+  padding: 2px 8%;
+  color: rgba(68, 68, 68, 0.3);
+}
+
 /* Landing Page*/
 @-webkit-keyframes float {
   0% {
@@ -74,8 +158,8 @@
   background-color: #f10707;
   border: .1px solid transparent;
   border-radius: 6px;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
   -webkit-transition-delay: 2ms;
@@ -179,7 +263,7 @@
   padding-left: 7%;
 }
 
-.landingPage section span button {
+.landingPage section span a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -192,6 +276,7 @@
   background-color: transparent;
   border: 0.5px solid #fff;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .landingPage section span .test {
@@ -203,8 +288,8 @@
 .landingPage section span .test:hover {
   background-color: transparent;
   border: 0.5px solid #fff;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
   -webkit-transition-delay: 2ms;
@@ -230,17 +315,6 @@
   background-color: #333333;
 }
 
-.about .bgName {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: bgName;
-  font-size: 12em;
-  font-weight: 900;
-  padding: 2px 8%;
-  color: rgba(68, 68, 68, 0.3);
-}
-
 .about .fuseTxt {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -260,13 +334,6 @@
   margin: 2em 0;
 }
 
-.about .navLinks {
-  -ms-grid-row: 2;
-  -ms-grid-column: 4;
-  grid-area: navLinks;
-  background-color: brown;
-}
-
 /* Test */
 .test {
   display: -ms-grid;
@@ -277,17 +344,6 @@
   -ms-grid-rows: minmax(0, 0.8fr) 2fr;
       grid-template-rows: minmax(0, 0.8fr) 2fr;
   background-color: #333333;
-}
-
-.test .bgName {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-area: bgName;
-  font-size: 12em;
-  font-weight: 900;
-  padding: 2px 8%;
-  color: rgba(68, 68, 68, 0.3);
 }
 
 .test .procedureTxt {
@@ -309,59 +365,31 @@
   margin: 2em 0;
 }
 
-.test .procedureTxt span button {
+.test .procedureTxt span a {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   color: inherit;
-  padding: 15px 45px;
-  margin: 6px;
+  padding: 10px 45px;
+  margin: 12px 6px;
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 6px;
   background-color: transparent;
   border: 0.5px solid #fff;
   cursor: pointer;
+  text-decoration: none;
   background-color: #f10707;
   border: 0.5px solid #f10707;
 }
 
-.test .procedureTxt span button:hover {
+.test .procedureTxt span a:hover {
   background-color: transparent;
   border: 0.5px solid #fff;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
   -webkit-transition-delay: 2ms;
           transition-delay: 2ms;
-}
-
-.test .navLinks {
-  -ms-grid-row: 2;
-  -ms-grid-column: 4;
-  grid-area: navLinks;
-  background-color: brown;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  height: 100%;
-  background-image: url(/assets/img/bg.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-html body {
-  background-color: rgba(0, 0, 0, 0.75);
-  font-family: 'Montserrat', sans-serif;
-  color: #EFEFEF;
-  height: 100%;
 }

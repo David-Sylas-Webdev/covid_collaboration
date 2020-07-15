@@ -6,20 +6,17 @@ $break-medium-two: 800px;
 $break-large: 1000px;
 $break-larger: 1280px;
 $break-humongous: 1440px;
+
 $light-text-color: #ddd;
 $bright-text-color: #EFEFEF;
-$secondary-color: #f10707;
+$secondary-color: rgb(241, 7, 7);
+$paddingLeft:8%;
 
 @mixin hoverEffect {
-    transition-duration: 2s;
+    transition-duration: 1s;
     transition-timing-function: ease;
     transition-delay: 2ms;
   }
-
-
-@import "landingpage";
-@import "about";
-@import "test";
 
 *{
     box-sizing: border-box;
@@ -28,7 +25,7 @@ $secondary-color: #f10707;
 }
  html{
     height: 100%;
-    background-image: url(/assets/img/bg.jpg);
+    background-image: url(../assets/img/bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,5 +34,44 @@ $secondary-color: #f10707;
         font-family: 'Montserrat', sans-serif;  
         color: $bright-text-color;
         height: 100%;
+
+        .navLinks{ //test and about
+            grid-area: navLinks;
+            grid-template-rows: repeat(4, minmax(40px, 100px));
+            display: inherit;
+            justify-content: center;
+            div{
+                width: 4em;
+                height: 5em;
+                align-self: center;
+                svg{
+                    width: 1em;
+                    height: 2em;
+                    fill: #666;
+                    margin: 1.5em;
+                    &:hover,&:active,&::selection{
+                        fill: rgba(241, 7, 7,.9);
+                        width: 1.5em;
+                        margin-left: 1.3em;
+                        @include hoverEffect();
+                    }
+                }
+                .active{
+                    fill: $secondary-color;
+                }
+            }
+        }
+        .bgName{  //test and about
+            grid-area: bgName;  
+            font-size: 12em;
+            font-weight: 900;
+            padding: 2px $paddingLeft;
+            color: rgba($color: #444, $alpha: 0.3);
+        }
     }  
 }
+
+@import "landingpage";
+@import "about";
+@import "test";
+

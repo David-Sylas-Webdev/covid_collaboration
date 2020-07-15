@@ -1,6 +1,5 @@
 /* Test */
 
-$paddingLeft:8%;
 
 .test{
     display: grid;
@@ -10,14 +9,6 @@ $paddingLeft:8%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: minmax(0, 0.8fr) 2fr;
     background-color: rgba($color: #333, $alpha: 1);
-    
-    .bgName{
-        grid-area: bgName;  
-        font-size: 12em;
-        font-weight: 900;
-        padding: 2px $paddingLeft;
-        color: rgba($color: #444, $alpha: 0.3);
-    }
 
     .procedureTxt{
         grid-area: textArea;
@@ -32,17 +23,18 @@ $paddingLeft:8%;
             margin: 2em 0;
         }
         span{
-            button{
+            a{
                 display: inline-flex;
                 color: inherit;
-                padding: 15px 45px;
-                margin: 6px;
+                padding: 10px 45px;
+                margin: 12px 6px;
                 font-size: 1.1rem;
                 font-weight: 600;
                 border-radius: 6px;
                 background-color: transparent;
                 border: 0.5px solid #fff;
                 cursor: pointer;
+                text-decoration: none;
                 background-color: $secondary-color;
                 border: .5px solid $secondary-color;
                 &:hover{
@@ -52,10 +44,5 @@ $paddingLeft:8%;
                 }
             }
         }
-    }
-
-    .navLinks{
-        grid-area: navLinks;
-        background-color: brown;
     }
 }
