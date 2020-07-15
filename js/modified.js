@@ -12,7 +12,9 @@ const getCountry = function(){
 
             if(this.status === 200){
 
-            resolve(JSON.parse(req.responseText).country_name);
+
+
+            resolve([JSON.parse(req.responseText).country_name, JSON.parse(req.responseText).country_code.toLowerCase()]);
 
         }
 
@@ -28,18 +30,16 @@ const getCountry = function(){
 };
 
 getCountry()
-            .then(function(country){
-                return country;
+            .then(function(array){
+                return array;
             })
             .then(
 
-                function(country){
+                function(array){
 
-                    
-                       
                         let xhr = new XMLHttpRequest();
                
-                        let result, totalCases, recovered, deaths, updateDate,  obtained;
+                        let result, totalCases, recovered, deaths, updateDate,  obtained, flag;
                
                         xhr.withCredentials = true;
                
@@ -59,10 +59,8 @@ getCountry()
                                console.log(obtained);
                
                            for(let i=0; i<obtained.results; i++){
-                               
                
-               
-                                if(country == obtained.response[i].country){
+                                if(array[0] == obtained.response[i].country){
                
                                    result = obtained.response[i];
                
@@ -79,10 +77,10 @@ getCountry()
                                    deaths = document.querySelector(".deaths h1");
                                    
                                    deaths.innerHTML = result.deaths.total;
-               
-                                   
-               
-                                   
+
+                                   flag = document.querySelector("#flag-img");
+                                   flag.setAttribute("src", `https://www.countryflags.io/${array[1]}/flat/${32}.png`)
+                                                  
                                 }
                                
                              }
