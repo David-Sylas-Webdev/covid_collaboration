@@ -46,3 +46,34 @@
         }
     }
 }
+
+#drop-zone{
+    background-color: #222;
+    width: 500px;
+    min-height: 350px;
+    max-width: auto;
+    max-height: auto;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .85);
+    cursor: pointer;
+}
+
+#drop-text p{
+    padding-top: 20px;
+    text-align: center;
+    opacity: .45;
+}
+
+.image-view {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position:relative;
+ }
+
+ .image-view img {
+     border-radius: 10px;
+     max-width: 300px;
+     max-height: 300px;
+ }
