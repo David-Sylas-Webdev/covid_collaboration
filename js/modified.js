@@ -56,15 +56,11 @@ getCountry()
                            if(this.status = 200){
                                obtained  = JSON.parse(this.responseText);
                
-                               console.log(obtained);
-               
                            for(let i=0; i<obtained.results; i++){
                
                                 if(array[0] == obtained.response[i].country){
                
                                    result = obtained.response[i];
-               
-                                   console.log(obtained.response[i]);
                
                                    totalCases  = document.querySelector(".cases h1");
                                    
@@ -79,6 +75,7 @@ getCountry()
                                    deaths.innerHTML = result.deaths.total;
 
                                    flag = document.querySelector("#flag-img");
+               
                                    flag.setAttribute("src", `https://www.countryflags.io/${array[1]}/flat/${32}.png`)
                                                   
                                 }
@@ -105,5 +102,5 @@ getCountry()
 
             )
             .catch(function(error){
-                console.log(error.message);
+                console.error(error.message);
             });
