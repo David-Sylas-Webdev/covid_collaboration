@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Underline From Center */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -69,7 +70,7 @@ html body .navLinks div svg:hover, html body .navLinks div svg:active, html body
 }
 
 html body .navLinks div .active {
-  fill: #f10707;
+  fill: rgba(211, 12, 12, 0.719);
 }
 
 html body .bgName {
@@ -154,8 +155,15 @@ html body .bgName {
   border: .1px solid transparent;
 }
 
-.landingPage header nav ul li:hover {
-  background-color: #f10707;
+.landingPage header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.landingPage header nav ul .hoverEffect:hover {
+  background-color: rgba(211, 12, 12, 0.719);
   border: .1px solid transparent;
   border-radius: 6px;
   -webkit-transition-duration: 1s;
@@ -166,11 +174,37 @@ html body .bgName {
           transition-delay: 2ms;
 }
 
-.landingPage header nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.1rem;
+.landingPage header nav ul .underLine {
+  -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+}
+
+.landingPage header nav ul .underLine:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: rgba(211, 12, 12, 0.719);
+  height: 2px;
+  -webkit-transition-property: "left, right";
+  transition-property: "left, right";
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+.landingPage header nav ul .underLine:hover:before, .landingPage header nav ul .underLine:focus:before, .landingPage header nav ul .underLine:active:before {
+  left: 0;
+  right: 0;
 }
 
 .landingPage aside {
@@ -281,8 +315,8 @@ html body .bgName {
 
 .landingPage section span .test {
   padding: 15px 50px;
-  background-color: #f10707;
-  border: 0.5px solid #f10707;
+  background-color: rgba(211, 12, 12, 0.719);
+  border: 0.5px solid rgba(211, 12, 12, 0.719);
 }
 
 .landingPage section span .test:hover {
@@ -334,7 +368,7 @@ html body .bgName {
   margin: 2em 0;
 }
 
-/* Test */
+/* TEST */
 .test {
   display: -ms-grid;
   display: grid;
@@ -379,8 +413,8 @@ html body .bgName {
   border: 0.5px solid #fff;
   cursor: pointer;
   text-decoration: none;
-  background-color: #f10707;
-  border: 0.5px solid #f10707;
+  background-color: rgba(211, 12, 12, 0.719);
+  border: 0.5px solid rgba(211, 12, 12, 0.719);
 }
 
 .test .procedureTxt span a:hover {
