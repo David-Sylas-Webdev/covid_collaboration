@@ -1,5 +1,18 @@
 /* TEST */
 
+//small devices font-size
+$procedure-txt-sm:3rem;
+$info-txt-sm:1.5rem;
+$dropZone-Width-sm:500px;
+$dropZone-Height-sm:350px;
+$imgView-Width-sm:300px;
+
+//large devices
+$procedure-txt-lg:3rem;
+$info-txt-lg:1.5rem;
+$dropZone-Width-lg:500px;
+$dropZone-Height-lg:350px;
+$imgView-Width-lg:300px;
 
 .test{
     display: grid;
@@ -7,20 +20,22 @@
         'bgName    bgName bgName  bgName'
         'textArea textArea textArea navLinks';
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: minmax(0, 0.8fr) 2fr;
-    background-color: rgba($color: #333, $alpha: 1);
+    grid-template-rows: minmax(0, 0.8fr) 1.2fr;
+    background-color: $tertiary-color;
 
     .procedureTxt{
         grid-area: textArea;
         line-height: 2em;
         padding: 2px $paddingLeft;
         h3{
-            font-size: 2em;
+            font-size: $procedure-txt-sm;
+            @include font($main-font);
         }
         p{
-            font-size: 1em;
+            font-size: $info-txt-sm;
             text-align: justify;
             margin: 2em 0;
+            @include font($ctrl-font);
         }
         span{
             a{
@@ -49,8 +64,8 @@
 
 #drop-zone{
     background-color: #222;
-    width: 500px;
-    min-height: 350px;
+    width: $dropZone-Width-sm;
+    min-height: $dropZone-Height-sm;
     max-width: auto;
     max-height: auto;
     border-radius: 15px;
@@ -74,6 +89,20 @@
 
  .image-view img {
      border-radius: 10px;
-     max-width: 300px;
-     max-height: 300px;
+     max-width: $imgView-Width-sm;
+     max-height: $imgView-Width-sm;
+ }
+
+ //media queries
+ @media screen and (min-width:$break-medium-two){
+
+    #drop-zone{
+        background-color: #222;
+        width: $dropZone-Width-lg;
+        min-height: $dropZone-Height-lg;
+    }
+    .image-view img {
+        max-width: $imgView-Width-lg;
+        max-height: $imgView-Width-lg;
+    }
  }

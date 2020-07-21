@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grenze Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $break-small: 400px;
 $break-medium-one: 600px;
@@ -7,16 +10,25 @@ $break-large: 1000px;
 $break-larger: 1280px;
 $break-humongous: 1440px;
 
+$main-font: 'Grenze Gotisch','Acme','Roboto','Open-Sans';//'Montserrat', sans-serif;
+$alt-font:'Aladin','Roboto','Open-Sans';//'Montserrat', sans-serif;
+$ctrl-font:'Acme';//'Montserrat', sans-serif;
 $light-text-color: #ddd;
 $bright-text-color: #EFEFEF;
-$secondary-color: rgba(211, 12, 12, 0.719);
+$secondary-color: #d30c0c;
+$tertiary-color:rgba($color: #333, $alpha: 1);
 $paddingLeft:8%;
 $medium-duration: .3s !default;
+$navlink-color: rgba(241, 7, 7,.9);
 
+@mixin font($type){
+    font-family: $type;
+    font-display: block;  //block,swap,fallback,optional
+}
 
 @mixin hoverEffect {
     transition-duration: 1s;
-    transition-timing-function: ease;
+    transition-timing-function: ease-in-out;
     transition-delay: 2ms;
   }
 
@@ -61,6 +73,13 @@ $medium-duration: .3s !default;
 	}
 }
 
+//keyframe for live covid 
+@keyframes float{
+    0%{transform: translate3d(0px, 0px, 0px);}
+    50%{transform: translate3d(1px, 10px, 0px);}
+    100%{transform: translate3d(0px, 0px, 0px);}
+}
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -74,7 +93,7 @@ $medium-duration: .3s !default;
     background-repeat: no-repeat;
     body{
         background-color: rgba($color: #000, $alpha: 0.75); 
-        font-family: 'Montserrat', sans-serif;  
+        @include font($main-font);
         color: $bright-text-color;
         height: 100%;
 
@@ -82,7 +101,8 @@ $medium-duration: .3s !default;
             grid-area: navLinks;
             grid-template-rows: repeat(4, minmax(40px, 100px));
             display: inherit;
-            justify-content: center;
+            justify-content: space-around;
+            align-content: center;
             div{
                 width: 4em;
                 height: 5em;
@@ -93,7 +113,7 @@ $medium-duration: .3s !default;
                     fill: #666;
                     margin: 1.5em;
                     &:hover,&:active,&::selection{
-                        fill: rgba(241, 7, 7,.9);
+                        fill: $navlink-color;
                         width: 1.5em;
                         margin-left: 1.3em;
                         @include hoverEffect();
@@ -117,4 +137,4 @@ $medium-duration: .3s !default;
 @import "landingpage";
 @import "about";
 @import "test";
-
+@import "contact";
