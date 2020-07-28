@@ -10,7 +10,7 @@
 }
 
 html {
-    min-height: 100vh;
+    height: 100%;
     background-image: url(../assets/img/bg.jpg);
     background-position: center;
     background-size: cover;
@@ -20,7 +20,8 @@ html {
         background-color: rgba($color: #000, $alpha: 0.75);
         @include font($main-font);
         color: $bright-text-color;
-        min-height: 100vh;
+        height: 100%;
+        overflow: hidden;
 
         .navLinks {
             //test and about
