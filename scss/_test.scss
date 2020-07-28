@@ -1,26 +1,29 @@
 /* TEST */
 
 //small devices font-size
-$procedure-txt-sm:3rem;
-$info-txt-sm:1.5rem;
 $dropZone-Width-sm:500px;
 $dropZone-Height-sm:350px;
 $imgView-Width-sm:300px;
 
-//large devices
-$procedure-txt-lg:3rem;
-$info-txt-lg:1.5rem;
+//medium screens
+$dropZone-Width-md:500px;
+$dropZone-Height-md:350px;
+$imgView-Width-md:300px;
+
+//large screens
 $dropZone-Width-lg:500px;
 $dropZone-Height-lg:350px;
 $imgView-Width-lg:300px;
 
+
+@include bgName($bgTxt-size-sm);
 .test{
     display: grid;
     grid-template-areas: 
         'bgName    bgName bgName  bgName'
         'textArea textArea textArea navLinks';
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: minmax(0, 0.8fr) 1.2fr;
+        grid-template-columns: repeat(3, 1fr) minmax(30px, 40px);
+        grid-template-rows:  minmax(90px, 100px) auto;
     background-color: $tertiary-color;
 
     .procedureTxt{
@@ -28,7 +31,7 @@ $imgView-Width-lg:300px;
         line-height: 2em;
         padding: 2px $paddingLeft;
         h3{
-            font-size: $procedure-txt-sm;
+            font-size: $heading-txt-sm;
             @include font($main-font);
         }
         p{
@@ -93,11 +96,34 @@ $imgView-Width-lg:300px;
      max-height: $imgView-Width-sm;
  }
 
- //media queries
- @media screen and (min-width:$break-medium-two){
 
+
+ //medium screens
+ @media screen and (min-width:$break-medium-two){
+    @include bgName($bgTxt-size-md);
+  .test{
+    grid-template-columns: repeat(3, 1fr) minmax(50px, 80px);
+    grid-template-rows:  minmax(140px, 160px) auto;
+  }
     #drop-zone{
-        background-color: #222;
+        width: $dropZone-Width-md;
+        min-height: $dropZone-Height-md;
+    }
+    .image-view img {
+        max-width: $imgView-Width-md;
+        max-height: $imgView-Width-md;
+    }
+ }
+
+
+ //large screens
+ @media screen and (min-width:$break-large){
+    @include bgName($bgTxt-size-lg);
+    .test{
+        grid-template-columns: repeat(3, 1fr) minmax(50px, 80px);
+    grid-template-rows:  minmax(160px, 190px) auto;
+    }
+    #drop-zone{
         width: $dropZone-Width-lg;
         min-height: $dropZone-Height-lg;
     }

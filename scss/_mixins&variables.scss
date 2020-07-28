@@ -1,0 +1,157 @@
+
+/*VARIABLES*/
+
+/*SCREENS*/
+$break-small: 400px;
+$break-medium-one: 600px;
+$break-medium-two: 800px;
+$break-large: 1000px;
+$break-larger: 1280px;
+$break-humongous: 1440px;
+
+$main-font:'Montserrat', sans-serif;
+$alt-font:'Aladin','Roboto','Open-Sans';//'Montserrat', sans-serif;
+$ctrl-font:'Montserrat', sans-serif;
+$light-text-color: #ddd;
+$bright-text-color: #EFEFEF;
+$secondary-color: #d30c0c;
+$tertiary-color:rgba($color: #333, $alpha: 1);
+$paddingLeft:8%;
+
+$fast-duration: .2s !default;
+$medium-duration: .3s !default;   //for animation duration
+$navlink-color: rgba(241, 7, 7,.9);
+
+/*ABOUT, TEST AND CONTACT*/
+//Asmall devices font-size
+$heading-txt-sm:2rem;
+$info-txt-sm:1rem;
+$bgTxt-size-sm:6rem;
+
+//medium screens
+$heading-txt-md:2.5rem;
+$info-txt-md:1.2rem;
+$bgTxt-size-md:10rem;
+
+//large screens
+$heading-txt-lg:3rem;
+$info-txt-lg:1.2rem;
+$bgTxt-size-lg:12rem;
+
+
+/*MIXINGS*/
+@mixin font($type){
+	font-family: $type;
+	//add other font related properties here
+}
+
+@mixin bgName($size){
+	.bgName{  //test and about faded page name
+	grid-area: bgName;  
+	font-size: $size;
+	font-weight: 900;
+	padding: 2px $paddingLeft;
+	color: rgba($color: #444, $alpha: 0.3);
+	overflow: hidden;
+	}
+}
+
+
+@mixin hacks(){
+    transform: perspective(1px) translateZ(0); //reduce blur chrome
+    box-shadow: 0 0 1px rgba(0,0,0,0);   //aliasing in mob/tabs
+    display:inline-block;     //!impo for transform
+    vertical-align:middle;     //!impo for transform
+}
+
+@mixin hoverEffect {
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+	transition-delay: 2ms;
+  }
+
+@mixin underline-from-center {
+    $duration: $medium-duration;
+    $underLineColor:$secondary-color;
+
+	@include hacks();
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		left: 51%;
+		right: 51%;
+        bottom: 0;
+		background: $underLineColor;
+		height: 2px;
+		transition-property: "left, right";
+		transition-duration: $duration;
+		transition-timing-function: ease-out;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		&:before {
+			left: 0;
+			right: 0;
+		}
+	}
+}
+
+/*keyframe for live covid */
+@keyframes float{
+    0%{transform: translate3d(0px, 0px, 0px);}
+    50%{transform: translate3d(1px, 10px, 0px);}
+    100%{transform: translate3d(0px, 0px, 0px);}
+}
+
+/*ExploreMore icon wobble*/ 
+@keyframes wobble {
+	16.65% {
+		transform: translateX(6px);
+	}
+
+	33.3% {
+		transform: translateX(-5px);
+	}
+
+	49.95% {
+		transform: translateX(4px);
+	}
+
+	66.6% {
+		transform: translateX(-2px);
+	}
+
+	83.25% {
+		transform: translateX(1px);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@mixin icon-wobble {
+	@include hacks();
+	transition-duration: $medium-duration;
+
+	.hvr-icon {transform: translateZ(0);}
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		.hvr-icon {
+			animation-name: wobble;
+			animation-duration: 1s;
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: 1;
+		}
+	}
+}

@@ -1,60 +1,72 @@
 /* Landing Page*/
 
 //small devices font-sizes
-$navBtn_FontSize_sm:1.3rem;   //navlinks, test btn, exploreMore btn
-$killCovid_FontSize_sm:3.6rem;  //kill covid text
-$casesInfo_FontSize_sm:1rem;   //sidebar cases small txt, sanity txt
-$casesTitle_FontSize_sm:2rem;   //sidebar cases large txt
+$navBtn_FontSize_sm:0.9rem; //navlinks, test btn, exploreMore btn
+$killCovid_FontSize_sm:2.7rem; //kill covid text
+$casesInfo_FontSize_sm:1rem; //sidebar cases small txt, sanity txt
+$casesTitle_FontSize_sm:1.5rem; //sidebar cases large txt
+
+//medium devices font-sizes
+$navBtn_FontSize_md:1.1rem;
+$killCovid_FontSize_md:5rem;
+$casesInfo_FontSize_md:1.15rem;
+$casesTitle_FontSize_md:2.15rem;
 
 //large devices font-sizes
-$navBtn_FontSize_lg:1.35rem;   
-$killCovid_FontSize_lg:5rem;
-$casesInfo_FontSize_lg:1.3rem;  
-$casesTitle_FontSize_lg:2.3rem; 
+$navBtn_FontSize_lg:1.1rem;
+$killCovid_FontSize_lg:6rem;
+$casesInfo_FontSize_lg:1.3rem;
+$casesTitle_FontSize_lg:2.3rem;
 
 
 
 //main styling 
 
-.landingPage{
+.landingPage {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         'header header header'
         'section section section';
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: minmax(50px,60px) 1fr;
+    grid-template-rows: minmax(50px, 60px) auto;
     overflow: hidden;
 
-    header{
+    header {
         grid-area: header;
         max-height: fit-content;
-        nav{
-            ul{ display: flex;
+
+        nav {
+            ul {
+                display: flex;
                 list-style-type: none;
                 justify-content: flex-end;
                 align-content: center;
                 padding-right: 2rem;
-                li{
+
+                li {
                     cursor: pointer;
                     padding: 10px 20px;
                     margin: .3rem;
-                    border: .1px solid transparent; 
-                
-                    a{
+                    border: .1px solid transparent;
+
+                    a {
                         text-decoration: none;
                         color: #fff;
                         font-weight: 500;
                         font-size: $navBtn_FontSize_sm;
                     }
                 }
-                .hoverEffect{
-                    &:active,&::selection{
+
+                .hoverEffect {
+                    &:active,
+                    &::selection {
                         background-color: $secondary-color;
-                        border: .1px solid transparent; 
-                        border-radius: 6px;    
+                        border: .1px solid transparent;
+                        border-radius: 6px;
                     }
                 }
-                .underLine{
+
+                .underLine {
                     @include underline-from-center();
                 }
             }
@@ -62,40 +74,42 @@ $casesTitle_FontSize_lg:2.3rem;
     }
 
     //Aside 
-    aside{
-        @include font($alt-font);
+    aside {
         grid-area: aside;
+        @include font($alt-font);
         color: $light-text-color;
         background-color: $tertiary-color;
-        display: flex;
-        flex-direction: column;
-        padding-top: 55%;
-        // justify-content: center;
-        // align-content: center;
+        padding-top: 15vh;
         display: none;
         
-        div{
+
+        div {
             margin-left: 10%;
             margin-bottom: 12%;
-            .covid-svg{
+
+            .covid-svg {
                 max-width: 4rem;
                 margin-bottom: 15px;
                 animation: float 4s infinite;
             }
-            span{
+
+            span {
                 display: inline-flex;
                 flex-direction: row;
                 width: 75%;
                 justify-content: space-between;
-                #flag-img{
+
+                #flag-img {
                     width: 1.5rem;
                 }
             }
-            h1{
-               font-size: $casesTitle_FontSize_sm;
-               font-weight: 750;
+
+            h1 {
+                font-size: $casesTitle_FontSize_sm;
+                font-weight: 750;
             }
-            h3{
+
+            h3 {
                 font-weight: 500;
                 font-size: $casesInfo_FontSize_sm;
             }
@@ -103,42 +117,33 @@ $casesTitle_FontSize_lg:2.3rem;
     }
 
     //main section
-    section{
-        grid-area: section;  
-        display: flex;  //for div & nav
+    section {
+        grid-area: section;
+        display: flex;        //for div & nav
         flex-direction: column;
         justify-content: space-around;
 
-        .mobile_floating_svg{
-            position: absolute;
-            top: 55%;
-            align-self:center;
-            .covid-svg{
-                width: 5rem;
-                animation: float 5s infinite;
-                opacity: 0.5;
-            }
-        }
-
-         div{
+        div {
             position: relative;
-            //padding-top: 10%;
             padding-left: 7%;
-            h1{
+
+            h1 {
                 font-size: $killCovid_FontSize_sm;
             }
-            h3{
+
+            h3 {
                 font-size: $casesInfo_FontSize_sm;
             }
         }
-        span{//background: #000;
-            position: relative;
-            padding-top: 10%;
-            padding-left: 7%;
-            a{
-                display: inline-flex;
+
+        span {
+            display: flex;
+            justify-content: center;
+
+            a {
+                display: inline;
                 color: inherit;
-                padding: 10px 35px;
+                min-height:55px ;
                 margin: 6px;
                 font-size: $navBtn_FontSize_sm;
                 font-weight: 600;
@@ -148,18 +153,27 @@ $casesTitle_FontSize_lg:2.3rem;
                 cursor: pointer;
                 text-decoration: none;
             }
-            .test{
-                padding: 12px 60px ;
+
+            .test {
+                padding: 16px 60px;
                 background-color: $secondary-color;
                 border: .5px solid $secondary-color;
-                &:active,&:hover{
+                @include hacks();
+
+                &:active,
+                &:hover {
                     background-color: transparent;
                     border: 0.5px solid #fff;
                 }
             }
-            .explore{
+
+            .explore {
+                @include icon-wobble();
+                padding: 15px 10px;
+                width: 160px;
                 align-items: center;
-                column-gap: 2rem;
+                justify-content: space-between;
+                display: flex;
             }
         }
     }
@@ -167,67 +181,113 @@ $casesTitle_FontSize_lg:2.3rem;
 
 
 //Media Queries
-@media screen and (min-width: $break-medium-two){
-.landingPage{
-    grid-template-areas: 
-        'aside header header header'
-        'aside section section section';
-    grid-template-columns: minmax(200px, 0.5fr) repeat(3, 1fr);
-    grid-template-rows: minmax(50px, 70px) 1fr;
+@media screen and (min-width: $break-medium-two) {
+    .landingPage {
+        grid-template-areas:
+            'aside header header header'
+            'aside section section section';
+        grid-template-columns: minmax(200px, 0.5fr) repeat(3, 1fr);
+        grid-template-rows: minmax(50px, 70px) 1fr;
 
-    header{
-        nav{
-            ul{
-                align-content: flex-end;
-                li{
-                    a{
-                    font-size:1.0rem;
-                    font-size: $navBtn_FontSize_lg;
+        header {
+            grid-area: header;
+
+            nav {
+                ul {
+                    align-content: flex-end;
+
+                    li {
+                        a {
+                            font-size: $navBtn_FontSize_md;
+                        }
                     }
                 }
+
+                .hoverEffect {
+                    &:hover {
+                        background-color: $secondary-color;
+                        border: .1px solid transparent;
+                        border-radius: 6px;
+                        @include hoverEffect();
+                    }
+                }
+
             }
-            .hoverEffect{
-                &:hover{
-                    background-color: $secondary-color;
-                    border: .1px solid transparent; 
-                    border-radius: 6px;
-                    @include hoverEffect();     
+        }
+
+        aside {
+            grid-area: aside;
+            display: initial;
+
+            div {
+                h1 {font-size: $casesTitle_FontSize_md;}
+
+                h3 {font-size: $casesInfo_FontSize_md;}
+            }
+        }
+
+        section {
+            grid-area: section;
+
+            div {
+                h1 {font-size: $killCovid_FontSize_md;}
+
+                h3 {font-size: $casesInfo_FontSize_md;}
+            }
+
+            span {
+            padding-left: 7%;
+            justify-content: flex-start;
+                a {
+                    
+                    font-size: $navBtn_FontSize_md;
+                }
+
+                .test {
+                    padding: 16px 50px;
+
+                    &:hover,
+                    &:active {
+                        @include hoverEffect;
+                    }
+                }
+
+                .explore {
+                    padding: 15px 5px;
+                    width: 190px;
                 }
             }
-            
-        }
-    }
-    aside{
-        display: initial;
-        div{
-            h1{font-size: $casesTitle_FontSize_lg;}
-            h3{font-size: $casesInfo_FontSize_lg;}
-        }
-    }
-    section{
-        div{
-            h1{
-                font-size: $killCovid_FontSize_lg;
-            }
-            h3{
-                font-size: $casesInfo_FontSize_lg;
-            }
-        }
-    }
-    span{//background: #000;
-        a{
-            padding: 10px 35px;
-        }
-        .test{
-            padding: 15px 50px ;
-            &:hover,&:active{
-                @include hoverEffect;
-            }
         }
     }
 }
-}
 
-@media screen and (min-width: $break-larger){
+//large devices
+@media screen and (min-width: $break-larger) {
+    .landingPage {
+        header {
+            a {font-size: $navBtn_FontSize_lg;}
+        }
 
+        aside {
+            display: initial;
+
+            div {
+                h1 {font-size: $casesTitle_FontSize_lg;}
+
+                h3 {font-size: $casesInfo_FontSize_lg;}
+            }
+        }
+
+        section {
+            div {
+                h1 { font-size: $killCovid_FontSize_lg;}
+
+                h3 {font-size: $casesInfo_FontSize_lg;}
+            }
+
+            span {
+                a {font-size: $navBtn_FontSize_lg;}
+            }
+        }
+    }
 }

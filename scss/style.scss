@@ -1,137 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Aladin:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Grenze Gotisch:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-$break-small: 400px;
-$break-medium-one: 600px;
-$break-medium-two: 800px;
-$break-large: 1000px;
-$break-larger: 1280px;
-$break-humongous: 1440px;
+@import "mixins&variables";
 
-$main-font: 'Grenze Gotisch','Acme','Roboto','Open-Sans';//'Montserrat', sans-serif;
-$alt-font:'Aladin','Roboto','Open-Sans';//'Montserrat', sans-serif;
-$ctrl-font:'Acme';//'Montserrat', sans-serif;
-$light-text-color: #ddd;
-$bright-text-color: #EFEFEF;
-$secondary-color: #d30c0c;
-$tertiary-color:rgba($color: #333, $alpha: 1);
-$paddingLeft:8%;
-$medium-duration: .3s !default;
-$navlink-color: rgba(241, 7, 7,.9);
-
-@mixin font($type){
-    font-family: $type;
-    font-display: block;  //block,swap,fallback,optional
-}
-
-@mixin hoverEffect {
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 2ms;
-  }
-
-@mixin hacks(){
-    transform: perspective(1px) translateZ(0); //reduce blur chrome
-    box-shadow: 0 0 1px rgba(0,0,0,0);   //aliasing in mob/tabs
-    display:inline-block;     //!impo for transform
-    vertical-align:middle;     //!impo for transform
-}
-
-/* Underline From Center */
-@mixin underline-from-center {
-    $duration: $medium-duration;
-    $underLineColor:$secondary-color;
-
-	@include hacks();
-	position: relative;
-	overflow: hidden;
-
-	&:before {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		left: 51%;
-		right: 51%;
-        bottom: 0;
-		background: $underLineColor;
-		height: 2px;
-		transition-property: "left, right";
-		transition-duration: $duration;
-		transition-timing-function: ease-out;
-	}
-
-	&:hover,
-	&:focus,
-	&:active {
-
-		&:before {
-			left: 0;
-			right: 0;
-		}
-	}
-}
-
-//keyframe for live covid 
-@keyframes float{
-    0%{transform: translate3d(0px, 0px, 0px);}
-    50%{transform: translate3d(1px, 10px, 0px);}
-    100%{transform: translate3d(0px, 0px, 0px);}
-}
-
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
- html{
-    height: 100%;
+
+html {
+    min-height: 100vh;
     background-image: url(../assets/img/bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    body{
-        background-color: rgba($color: #000, $alpha: 0.75); 
+
+    body {
+        background-color: rgba($color: #000, $alpha: 0.75);
         @include font($main-font);
         color: $bright-text-color;
-        height: 100%;
+        min-height: 100vh;
 
-        .navLinks{ //test and about
+        .navLinks {
+            //test and about
             grid-area: navLinks;
             grid-template-rows: repeat(4, minmax(40px, 100px));
             display: inherit;
-            justify-content: space-around;
+            // justify-content: space-around;
             align-content: center;
-            div{
+
+            div {
                 width: 4em;
                 height: 5em;
                 align-self: center;
-                svg{
+
+                svg {
                     width: 1em;
                     height: 2em;
                     fill: #666;
                     margin: 1.5em;
-                    &:hover,&:active,&::selection{
+
+                    &:hover,
+                    &:active,
+                    &::selection {
                         fill: $navlink-color;
                         width: 1.5em;
                         margin-left: 1.3em;
                         @include hoverEffect();
                     }
                 }
-                .active{
+
+                .active {
                     fill: $secondary-color;
                 }
             }
         }
-        .bgName{  //test and about
-            grid-area: bgName;  
-            font-size: 12em;
-            font-weight: 900;
-            padding: 2px $paddingLeft;
-            color: rgba($color: #444, $alpha: 0.3);
-        }
-    }  
+
+    }
 }
 
 @import "landingpage";

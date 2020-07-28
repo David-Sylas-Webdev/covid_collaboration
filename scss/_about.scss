@@ -1,16 +1,14 @@
 /* About */
 
-//small devices font-size
-$fuse-txt:3rem;
-$info-txt:1.5rem;
 
+@include bgName($bgTxt-size-sm);
 .about{
     display: grid;
     grid-template-areas: 
         'bgName    bgName bgName  bgName'
         'textArea textArea textArea navLinks';
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: minmax(0, 0.8fr) 2fr;
+        // grid-template-columns: repeat(3, 1fr) minmax(30px, 40px);
+        grid-template-rows:  minmax(90px, 100px) auto;
     background-color: $tertiary-color;
 
     .fuseTxt{
@@ -18,11 +16,56 @@ $info-txt:1.5rem;
         line-height: 2em;
         padding: 2px 8%;
         h3{
-            font-size: $fuse-txt;
+            font-size: $heading-txt-sm;
             @include font($main-font);
         }
         p{
-            font-size: $info-txt;
+            font-size: $info-txt-sm;
+            text-align: justify;
+            margin: 2em 0;
+            @include font($ctrl-font);
+        }
+    }
+}
+
+//Medium screens
+@media screen and (min-width: $break-medium-two){
+    @include bgName($bgTxt-size-md);
+ .about{
+    grid-template-columns: repeat(3, 1fr) minmax(50px, 80px);
+    grid-template-rows:  minmax(140px, 160px) auto;
+ 
+    .fuseTxt{
+        line-height: 2em;
+        padding: 2px 8%;
+        h3{
+            font-size: $heading-txt-md;
+            @include font($main-font);
+        }
+        p{
+            font-size: $info-txt-md;
+            text-align: justify;
+            margin: 2em 0;
+            @include font($ctrl-font);
+        }
+    }
+}}
+
+@media screen and (min-width: $break-large){
+    @include bgName($bgTxt-size-lg);
+    .about{
+        grid-template-columns: repeat(3, 1fr) minmax(50px, 80px);
+    grid-template-rows:  minmax(160px, 190px) auto;
+    }
+    .fuseTxt{
+        line-height: 2em;
+        padding: 2px 8%;
+        h3{
+            font-size: $heading-txt-lg;
+            @include font($main-font);
+        }
+        p{
+            font-size: $info-txt-lg;
             text-align: justify;
             margin: 2em 0;
             @include font($ctrl-font);
