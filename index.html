@@ -16,7 +16,7 @@
         </ul></nav>
     </header>
 
-    <aside>
+    <aside id="aside" onblur="hide()">
         <div class="update">
             <object data="assets/svg/covid.svg" type="image/svg+xml" class="covid-svg">
                 <img src="assets/img/covid.png" alt="covid" class="covid-svg">
@@ -58,6 +58,13 @@
             </a>
         </span>
     </section>
+    <!-- floating icon mobile view -->
+    <span id="sideInfoIcon-mb" onclick="show()">
+        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="#d30c0c" width="18px" height="18px"><rect fill="none" height="24" width="24"/><path d="M15,5l-1.41,1.41L18.17,11H2V13h16.17l-4.59,4.59L15,19l7-7L15,5z"/></svg>
+    </span>
+    
     <script src="/js/modified.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="/js/displayCases.js"></script>
 </body>
 </html>

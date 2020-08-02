@@ -73,14 +73,16 @@ $casesTitle_FontSize_lg:2.3rem;
         }
     }
 
-    //Aside 
+    //ASIDE 
+    
     aside {
-        grid-area: aside;
         @include font($alt-font);
         color: $light-text-color;
         background-color: $tertiary-color;
         padding-top: 15vh;
-        display: none;
+        visibility: hidden;
+        left: 0;
+        top: 0;
         
 
         div {
@@ -180,6 +182,35 @@ $casesTitle_FontSize_lg:2.3rem;
 }
 
 
+//Applies to smaller screens only - 
+//sets aside behaviour on small screens
+@media screen and (max-width: $break-medium-two){
+    //floating cases
+    #sideInfoIcon-mb{
+        position: absolute;
+        text-align: center;
+        padding-top: 10px;
+        width: 40px;
+        height: 40px;
+        left: -10px;
+        top: 15%;
+        background: #222;
+        border-radius: 50%;
+        // z-index: 3;
+
+        &:active,&:hover{
+            @include hoverEffect();
+            cursor: pointer;
+        }
+    }
+    
+    #aside{//styling specific to small screens  
+        position: absolute;  
+        width: 150px;
+        height: 100vh;
+        z-index: 2;
+    }
+}
 //Media Queries
 @media screen and (min-width: $break-medium-two) {
     .landingPage {
@@ -214,10 +245,16 @@ $casesTitle_FontSize_lg:2.3rem;
 
             }
         }
-
+        
+        //ASIDE
+        #sideInfoIcon-mb{
+            display: none;
+        }
         aside {
             grid-area: aside;
             display: initial;
+            visibility: visible;
+            // position: relative;
 
             div {
                 h1 {font-size: $casesTitle_FontSize_md;}
