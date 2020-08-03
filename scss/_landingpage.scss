@@ -182,21 +182,20 @@ $casesTitle_FontSize_lg:2.3rem;
 }
 
 
-//Applies to smaller screens only - 
-//sets aside behaviour on small screens
+/*Applies to smaller screens only - 
+  sets aside behaviour on small screens*/
 @media screen and (max-width: $break-medium-two){
     //floating cases
     #sideInfoIcon-mb{
-        position: absolute;
+        position: fixed;
         text-align: center;
         padding-top: 10px;
         width: 40px;
         height: 40px;
-        left: -10px;
         top: 15%;
         background: #222;
+        border: 1px solid $secondary-color;
         border-radius: 50%;
-        // z-index: 3;
 
         &:active,&:hover{
             @include hoverEffect();
@@ -211,6 +210,7 @@ $casesTitle_FontSize_lg:2.3rem;
         z-index: 2;
     }
 }
+
 //Media Queries
 @media screen and (min-width: $break-medium-two) {
     .landingPage {
