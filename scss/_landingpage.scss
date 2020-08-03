@@ -22,7 +22,7 @@ $casesTitle_FontSize_lg:2.3rem;
 
 //main styling 
 
-.landingPage {
+#landingPage {
     display: grid;
     grid-template-areas:
         'header header header'
@@ -187,7 +187,7 @@ $casesTitle_FontSize_lg:2.3rem;
 @media screen and (max-width: $break-medium-two){
     //floating cases
     #sideInfoIcon-mb{
-        position: fixed;
+        position: absolute;
         text-align: center;
         padding-top: 10px;
         width: 40px;
@@ -213,7 +213,7 @@ $casesTitle_FontSize_lg:2.3rem;
 
 //Media Queries
 @media screen and (min-width: $break-medium-two) {
-    .landingPage {
+    #landingPage {
         grid-template-areas:
             'aside header header header'
             'aside section section section';
@@ -300,7 +300,7 @@ $casesTitle_FontSize_lg:2.3rem;
 
 //large devices
 @media screen and (min-width: $break-larger) {
-    .landingPage {
+    #landingPage {
         header {
             a {font-size: $navBtn_FontSize_lg;}
         }
